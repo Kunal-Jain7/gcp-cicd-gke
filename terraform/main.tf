@@ -38,7 +38,7 @@ resource "google_compute_firewall" "client-fw-http" {
 
 resource "google_compute_instance" "client-instance" {
   name         = "client-jenkins-instance"
-  machine_type = "e2-micro"
+  machine_type = var.instance_type
   zone         = "us-central1-a"
   tags         = [tolist(google_compute_firewall.client-fw-http.target_tags)[0], tolist(google_compute_firewall.client-fw-ssh.target_tags)[0]]
 

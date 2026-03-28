@@ -13,7 +13,7 @@ terraform {
 }
 
 provider "google" {
-  project = "learning-gcp-project-2026"
-  region  = "us-central1"
+  project = var.gcp_project
+  region  = var.gcp_region
 }
 
