@@ -5,7 +5,7 @@ terraform {
       version = "~> 5.33.0"
     }
   }
-  required_version = ">= 1.14.4"
+  required_version = ">= 1.7.5"
   backend "gcs" {
     bucket = "kunalgcpterraformstate"
     prefix = "terraform/state"
