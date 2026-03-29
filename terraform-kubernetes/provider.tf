@@ -1,18 +1,17 @@
 terraform {
+  required_version = ">= 1.7.5"
   required_providers {
     google = {
       source  = "hashicorp/google"
       version = "~> 5.33.0"
     }
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = ">= 2.31"
+    }
   }
-  required_version = ">= 1.7.5"
   backend "gcs" {
-    bucket = "gketerraformstate"
+    bucket = "kubernetesterraform"
     prefix = "${var.environment}/terraform/statefile"
   }
-}
-
-provider "google" {
-  region  = var.region
-  project = var.project
 }
