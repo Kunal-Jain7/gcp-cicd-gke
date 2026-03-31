@@ -8,7 +8,7 @@ terraform {
   required_version = ">= 1.7.5"
   backend "gcs" {
     bucket = "gketerraformstate"
-    prefix = "${var.environment}/terraform/statefile"
+    prefix = "terraform/statefile"
   }
 }
 
