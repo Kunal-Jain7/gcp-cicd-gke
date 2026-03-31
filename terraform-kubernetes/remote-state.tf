@@ -7,6 +7,7 @@ data "terraform_remote_state" "gketerraformstate" {
 }
 
 data "google_container_cluster" "gke" {
+  project  = var.project
   name     = data.terraform_remote_state.gketerraformstate.outputs.gke_cluster_name
   location = data.terraform_remote_state.gketerraformstate.outputs.gke_cluster_location
 }
