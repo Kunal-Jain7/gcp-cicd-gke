@@ -2,7 +2,7 @@ data "terraform_remote_state" "gketerraformstate" {
   backend = "gcs"
   config = {
     bucket = "gketerraformstate"
-    prefix = "${var.environment}/terraform/statefile"
+    prefix = "terraform/statefile"
   }
 }
 
