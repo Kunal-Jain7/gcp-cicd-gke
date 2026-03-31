@@ -8,6 +8,9 @@ resource "google_container_node_pool" "client-nodepool" {
     preemptible  = true
     machine_type = var.machine_type
 
+    disk_type    = "pd-standard"
+    disk_size_gb = 20
+
     service_account = google_service_account.client-gke-sa.email
     oauth_scopes = [
       "https://www.goggleapis.com/auth/cloud-platform"
